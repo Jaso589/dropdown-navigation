@@ -1,0 +1,405 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-size: 16px;
+    margin: 0;
+    background-color: #F8F9F9;
+    color: #555;
+    font-family:sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li{
+    list-style: none;
+}
+
+#header{
+    height: 3.5rem;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+.navbar{
+    position: relative;
+    display: flex;
+    margin: 0 3rem 0 2rem;
+    width: 100%;
+    align-items: center;
+}
+.navbar ul{
+    position: relative;
+    margin: 0 40px;
+    display: flex;
+}
+.navbar ul li{
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+.navbar a:hover{
+    color: #000;
+    font-weight: bold;
+}
+.navbar .login-register{
+    position: absolute;
+    right: 0;
+}
+
+.navbar ul .dwn{
+    position:absolute;
+    margin: 10px 0;
+    background-color: white;
+    border: none;
+    padding:10px 0 10px 10px;
+    z-index: 999;
+    box-shadow: 0 0 10px #555;
+    display: block;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.navbar ul small{
+    font-weight: bold;
+    margin: 0 0 0 5px;
+}
+
+.navbar ul .dwn li{
+    margin: 0 10px 8px 0;
+    display: flex;
+}
+.nav-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dwn li a{
+    cursor: pointer;
+    width: 100%;
+    height: inherit;
+}
+.dwn li a:hover{
+    font-weight: bold;
+}
+.navbar ul .dwn li img{
+    margin: 0 10px 0 0;
+}
+
+.dwn-1{
+    left: -35px;
+    visibility: hidden;
+}
+.dwn-2{
+    
+    visibility: hidden;
+}
+.login-register{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-register a{
+    margin: 0 20px 0 0;
+}
+.login-register button{
+    height: 30px;
+    width: 80px;
+    background: none;
+    border: solid 1px #555;
+    border-radius: 10px;
+
+}
+.login-register button a{
+    text-align: center;
+    margin: auto;
+}
+.header .panel-btn{
+    display: none;
+}
+main{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0 3rem 0 10rem;
+    height: 100vh;
+}
+main .hero-desktop{
+    width: 100%;
+    height: 200px;
+    place-self: start start;
+    padding: 20px;
+    grid-column: 2 / span 2;
+    grid-row: 1/ span 2;
+}
+.hero-mobile{
+    display: none;
+}
+.hero-desktop img{
+    width: 85%;
+    object-fit: cover;
+}
+main .text-hero{
+    place-self: center start;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 400px;
+    margin: 7rem 0 0 0;
+}
+.text-hero h1{
+    font-size: 5rem;
+    text-align: left;
+    color: #000;
+}
+.text-hero .h1-mobile{
+    display: none;
+}
+.text-hero p{
+    height: 120px;
+    padding: 20px 0;
+    margin: 1rem 0;
+    width: 330px;
+    text-align: justify;
+    font-weight:500;
+}
+.text-hero button{
+    background: #000;
+    color: white;
+    height: 40px;
+    font-size: 1rem;
+    width: 150px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.text-hero button:hover{
+    border:solid #000 1px ;
+    background: none;
+    color: #000;
+}
+main .clients{
+    margin: 4rem 0 0 0 ;
+    place-self: start;
+}
+.clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clients a{
+    margin: 0 30px 0 0;
+}
+
+
+
+.menu-mobil{
+    display: none;
+}
+/*animaciones para dropdown*/
+.is-active{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+.visible{
+    opacity: 1;
+}
+.rojo{
+    background-color: red;
+}
+
+@media (max-width: 700px) {
+    
+    #header{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 99;
+    }
+    .navbar{
+        background: #F8F9F9;
+        height: 3rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+    }
+    .navbar .logo{
+        position: absolute;
+        left: 20px;
+        top: 10px;
+    }
+   
+    .nav-items{
+        display: flex;
+        background-color:#F8F9F9;
+        flex-direction: column;
+        height: 100vh;
+        width: 250px;
+        position: absolute;
+        right: 0;
+        justify-content: center;
+        align-items: start;
+        display: none;
+        z-index: 99;
+    }
+    .nav-items ul{
+        display: flex;
+        flex-direction: column;
+        top:70px;
+        left: -30px;
+        padding: 10px;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .nav-items ul li{
+        margin-bottom: 20px;
+    }
+    .nav-items .login-register{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        top: -100px;
+        margin-top: 10pc;
+    }
+    .login-register *{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .login-register a{
+        margin: 0;
+    }
+    .login-register button{
+        width: 150px;
+        height: 40px;
+    }
+    .navbar ul .dwn{
+        position: relative;
+        display: flex;
+        margin: 0;
+        top: 0;
+        left: 20px;
+        border-radius: 0px;
+        z-index: 0;
+        box-shadow: none;
+        background-color: #F8F9F9;
+    }
+    .navbar ul .dwn-1{
+        height: auto;
+        display: none;
+
+    }
+    .navbar ul .dwn-2{
+        height: auto;
+        display: none;
+    }
+  
+    
+    .header .panel-btn{
+    display: flex;
+}
+    .panel-btn{
+        position: fixed;
+        z-index: 999;
+        background-color: red;
+        top: 0;
+        right: 20px;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-desktop{
+        display: none;
+    }
+    .hero-mobile{
+        display: block;
+    }
+    main{
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    main .hero-mobile{
+        position: relative;
+        padding: 10px;
+        margin: 0;
+        top: 50px;
+    }
+    main .hero-mobile img{
+        width: 100%;
+    }
+    main .text-hero{
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    .text-hero h1{
+        display: none;
+    }
+    .text-hero .h1-mobile{
+        font-size: 2rem;
+        display: flex;
+        margin: 0;
+    }
+    .text-hero p{
+        margin: 0;
+        height: auto;
+    }
+    .text-hero button{
+        margin: 0;
+    }
+    main .clients{
+        margin: 0;
+    }
+    .clients a{
+        margin: 0 10px;
+    }
+    .clients img{
+        width: 70px;
+    }
+/*animaciones*/
+
+    .prueba{
+        height: 50px;
+        width: 100px;
+        position:relative;
+        background-color: red;
+        transform: translateY(-10px);
+    }
+    .cajita{
+        width: 100px;
+        position: relative;
+        height: 20px;
+        background-color: blue;
+    }
+    .dnwprob{
+        display: flex;
+    }
+    .fondoOpaco{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .navbar ul .is-active{
+        display: block;
+        visibility: visible;
+    }
+
+}
